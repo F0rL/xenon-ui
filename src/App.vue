@@ -56,6 +56,29 @@
         <y-col span="6">6</y-col>
       </y-row>
     </div>
+    <div class="ex">
+      <y-container style="height: 50vh;border: 1px solid #F1453D">
+        <y-header class="demo">header</y-header>
+        <y-main class="demo">main</y-main>
+        <y-footer class="demo">footer</y-footer>
+      </y-container>
+      <y-container style="height: 50vh;border: 1px solid #F1453D;margin-top: 10px">
+        <y-header class="demo">header</y-header>
+        <y-container>
+          <y-sider class="demo">sider</y-sider>
+          <y-main class="demo">main</y-main>
+        </y-container>
+        <y-footer class="demo">footer</y-footer>
+      </y-container>
+      <y-container style="height: 50vh;border: 1px solid #F1453D;margin-top: 10px">
+        <y-sider style="width: 20%;background-color: #999;">sider</y-sider>
+        <y-container>
+          <y-header class="demo">header</y-header>
+          <y-main class="demo">main</y-main>
+          <y-footer class="demo">footer</y-footer>
+        </y-container>
+      </y-container>
+    </div>
   </div>
 </template>
 
@@ -65,6 +88,11 @@ import ButtonGroup from './components/basic/button-group/button-group'
 import Input from './components/form/input/input'
 import Row from './components/layout/grid/row'
 import Col from './components/layout/grid/col'
+import Container from './components/layout/container/container'
+import Header from './components/layout/container/header'
+import Main from './components/layout/container/main'
+import Sider from './components/layout/container/sider'
+import Footer from './components/layout/container/footer'
 
 export default {
   name: 'app',
@@ -85,6 +113,11 @@ export default {
     'y-input': Input,
     'y-row': Row,
     'y-col': Col,
+    'y-container': Container,
+    'y-header': Header,
+    'y-main': Main,
+    'y-sider': Sider,
+    'y-footer': Footer,
   }
 }
 </script>
@@ -98,5 +131,9 @@ export default {
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
+  }
+  .demo {
+    min-height: 100px;
+    border: 1px solid #ccc;
   }
 </style>
