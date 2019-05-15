@@ -80,22 +80,24 @@
 <!--      </y-container>-->
 <!--    </div>-->
     <div class="ex">
-      <button @click="showToast">show toast</button>
+      <button @click="showToast1">show toast top</button>
+      <button @click="showToast2">show toast middle</button>
+      <button @click="showToast3">show toast bottom</button>
     </div>
   </div>
 </template>
 
 <script>
-import Button from './components/basic/button/button'
-import ButtonGroup from './components/basic/button-group/button-group'
-import Input from './components/form/input/input'
-import Row from './components/layout/grid/row'
-import Col from './components/layout/grid/col'
-import Container from './components/layout/container/container'
-import Header from './components/layout/container/header'
-import Main from './components/layout/container/main'
-import Sider from './components/layout/container/sider'
-import Footer from './components/layout/container/footer'
+// import Button from './components/basic/button/button'
+// import ButtonGroup from './components/basic/button-group/button-group'
+// import Input from './components/form/input/input'
+// import Row from './components/layout/grid/row'
+// import Col from './components/layout/grid/col'
+// import Container from './components/layout/container/container'
+// import Header from './components/layout/container/header'
+// import Main from './components/layout/container/main'
+// import Sider from './components/layout/container/sider'
+// import Footer from './components/layout/container/footer'
 import plugin from './components/other/toast/plugin'
 //import Toast from './components/other/toast/toast'
 import Vue from 'vue'
@@ -110,26 +112,45 @@ export default {
     }
   },
   mounted() {
+
   },
   methods: {
     toggle(){
       this.isLoading = !this.isLoading
     },
-    showToast(){
-      this.$toast('当前功能不稳定')
-    }
+    showToast(position){
+      this.$toast('当前功能不稳定',{
+        text: '点击关闭',
+        enableHtml: false,
+        autoClose: false,
+        autoCloseDelay: 3,
+        position,
+        callback() {
+          //console.log('知道了')
+        },
+      })
+    },
+    showToast1() {
+      this.showToast('top')
+    },
+    showToast2() {
+      this.showToast('middle')
+    },
+    showToast3() {
+      this.showToast('bottom')
+    },
   },
   components: {
-    'y-button': Button,
-    'y-button-group': ButtonGroup,
-    'y-input': Input,
-    'y-row': Row,
-    'y-col': Col,
-    'y-container': Container,
-    'y-header': Header,
-    'y-main': Main,
-    'y-sider': Sider,
-    'y-footer': Footer,
+    // 'y-button': Button,
+    // 'y-button-group': ButtonGroup,
+    // 'y-input': Input,
+    // 'y-row': Row,
+    // 'y-col': Col,
+    // 'y-container': Container,
+    // 'y-header': Header,
+    // 'y-main': Main,
+    // 'y-sider': Sider,
+    // 'y-footer': Footer,
   }
 }
 </script>

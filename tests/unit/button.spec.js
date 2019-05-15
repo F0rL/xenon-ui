@@ -1,10 +1,11 @@
 import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
-import Button from '@/components/basic/button/button'
+// import Vue from 'vue'
+// import { shallowMount } from '@vue/test-utils'
+import Toast from '@/components/other/toast/toast'
 
-describe('Button.vue', () => {
-  it('存在', () => {
-    expect(Button).to.be.ok
+describe('Toast.vue', () => {
+  it('has a props hook', () => {
+    expect(typeof Toast.props).toBe('function')
   })
   // it('可以设置icon', () => {
   //   const msg = 'settings'
