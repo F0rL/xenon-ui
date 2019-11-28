@@ -20,8 +20,20 @@
   </head>
   <body>
     <div id="app">
-      <xe-button></xe-button>
+      <xe-button>默认按钮</xe-button>
+      <xe-button icon="loading">默认图标</xe-button>
+      <xe-button icon="loading" position="right">右侧图标</xe-button>
+      <xe-button type="normal">普通按钮</xe-button>
+      <xe-button type="primary">主要按钮</xe-button>
+      <xe-button type="success">成功按钮</xe-button>
+      <xe-button type="warning">警告按钮</xe-button>
+      <xe-button type="error">错误按钮</xe-button>
+      <xe-button type="danger">危险按钮</xe-button>
+      <xe-button icon="setting" loading>加载</xe-button>
+      <xe-button icon="setting"  position="right" :loading="true">加载</xe-button>
+      <xe-button icon="setting"  :loading="iconLoading" @click="iconLoading = !iconLoading">加载</xe-button>
     </div>
+    <script src="//at.alicdn.com/t/font_1535534_6pph31ac49e.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

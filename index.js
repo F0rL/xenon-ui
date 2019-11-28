@@ -1,9 +1,13 @@
 import Vue from 'vue'
-import XeButton from './packages/button'
+import Xenon from './src/index'
+
+Vue.use(Xenon)
 
 const vue = new Vue({
   el: '#app',
-  components: {
-    XeButton
+  data: {
+    iconLoading: false
+  },
+  methods: {
   }
 })

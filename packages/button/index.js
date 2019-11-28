@@ -1,8 +1,8 @@
-import XeButton from './button';
+import Button from './button';
 
 /* istanbul ignore next */
-XeButton.install = function(Vue) {
-  Vue.component(XeButton.name, ElButton);
-};
+Button.install = function(Vue) {
+  Vue.component(Button.name, Button);
+}
 
-export default XeButton;
+export default Button;
