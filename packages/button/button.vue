@@ -19,8 +19,7 @@ export default {
   data() {
     return {}
   },
-  computed: {
-  },
+  computed: {},
   props: {
     icon: String,
     position: {
@@ -49,7 +48,10 @@ export default {
 @import '../color.scss';
 
 .xe-button {
-  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   font-size: 14px;
   height: 32px;
   line-height: 22px;
@@ -59,12 +61,10 @@ export default {
   border: 1px solid;
   border-radius: 4px;
   border-color: $border;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   user-select: none;
   position: relative;
   vertical-align: middle;
+  cursor: pointer;
   &:hover {
     color: $primary;
     border-color: $primary;
@@ -76,12 +76,14 @@ export default {
   }
   &.xe-icon-right {
     > .xe-icon-main {
+      flex-shrink: 0;
       order: 2;
       margin-left: 0.1em;
     }
   }
   &.xe-icon-left {
     > .xe-icon-main {
+      flex-shrink: 0;
       order: 0;
       margin-right: 0.1em;
     }
@@ -116,6 +118,9 @@ export default {
     background: $danger;
     border-color: $danger;
   }
+  .xe-button-content {
+    flex-shrink: 0;
+  }
   .xe-icon-loading {
     animation: spin 2s linear infinite;
   }
@@ -126,7 +131,7 @@ export default {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 </style>

@@ -30,8 +30,25 @@
       <xe-button type="error">错误按钮</xe-button>
       <xe-button type="danger">危险按钮</xe-button>
       <xe-button icon="setting" loading>加载</xe-button>
-      <xe-button icon="setting"  position="right" :loading="true">加载</xe-button>
-      <xe-button icon="setting"  :loading="iconLoading" @click="iconLoading = !iconLoading">加载</xe-button>
+      <xe-button icon="setting" position="right" :loading="true"
+        >加载</xe-button
+      >
+      <xe-button
+        icon="setting"
+        :loading="iconLoading"
+        @click="iconLoading = !iconLoading"
+        >点击加载</xe-button
+      >
+      <xe-button-group>
+        <xe-button icon="left">左按钮</xe-button>
+        <xe-button icon="right" position="right">右按钮</xe-button>
+      </xe-button-group>
+      <xe-button-group>
+        <xe-button icon="left">左按钮</xe-button>
+        <xe-button>中按钮</xe-button>
+        <xe-button icon="right" position="right">右按钮</xe-button>
+        <div>错误提示验证</div>
+      </xe-button-group>
     </div>
     <script src="//at.alicdn.com/t/font_1535534_6pph31ac49e.js"></script>
     <script src="./index.js"></script>
