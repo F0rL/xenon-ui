@@ -13,42 +13,44 @@
         padding: 0;
         box-sizing: border-box;
       }
-      #app {
+      #app,#test {
         margin: 40px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <xe-button>默认按钮</xe-button>
-      <xe-button icon="loading">默认图标</xe-button>
-      <xe-button icon="loading" position="right">右侧图标</xe-button>
-      <xe-button type="normal">普通按钮</xe-button>
-      <xe-button type="primary">主要按钮</xe-button>
-      <xe-button type="success">成功按钮</xe-button>
-      <xe-button type="warning">警告按钮</xe-button>
-      <xe-button type="error">错误按钮</xe-button>
-      <xe-button type="danger">危险按钮</xe-button>
-      <xe-button icon="setting" loading>加载</xe-button>
-      <xe-button icon="setting" position="right" :loading="true"
-        >加载</xe-button
-      >
-      <xe-button
-        icon="setting"
-        :loading="iconLoading"
-        @click="iconLoading = !iconLoading"
-        >点击加载</xe-button
-      >
-      <xe-button-group>
-        <xe-button icon="left">左按钮</xe-button>
-        <xe-button icon="right" position="right">右按钮</xe-button>
-      </xe-button-group>
-      <xe-button-group>
-        <xe-button icon="left">左按钮</xe-button>
-        <xe-button>中按钮</xe-button>
-        <xe-button icon="right" position="right">右按钮</xe-button>
-        <div>错误提示验证</div>
-      </xe-button-group>
+      <div class="content">
+        <xe-button>默认按钮</xe-button>
+        <xe-button icon="loading">默认图标</xe-button>
+        <xe-button icon="loading" position="right">右侧图标</xe-button>
+        <xe-button type="normal">普通按钮</xe-button>
+        <xe-button type="primary">主要按钮</xe-button>
+        <xe-button type="success">成功按钮</xe-button>
+        <xe-button type="warning">警告按钮</xe-button>
+        <xe-button type="error">错误按钮</xe-button>
+        <xe-button type="danger">危险按钮</xe-button>
+        <xe-button icon="setting" loading>加载</xe-button>
+        <xe-button icon="setting" position="right" :loading="true"
+          >加载</xe-button
+        >
+        <xe-button
+          icon="setting"
+          :loading="iconLoading"
+          @click="iconLoading = !iconLoading"
+          >点击加载</xe-button
+        >
+        <xe-button-group>
+          <xe-button icon="left">左按钮</xe-button>
+          <xe-button icon="right" position="right">右按钮</xe-button>
+        </xe-button-group>
+        <xe-button-group>
+          <xe-button icon="left">左按钮</xe-button>
+          <xe-button>中按钮</xe-button>
+          <xe-button icon="right" position="right">右按钮</xe-button>
+          <div>错误提示验证</div>
+        </xe-button-group>
+      </div>
     </div>
     <script src="//at.alicdn.com/t/font_1535534_6pph31ac49e.js"></script>
     <script src="./index.js"></script>

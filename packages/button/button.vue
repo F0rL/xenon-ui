@@ -84,7 +84,7 @@ export default {
   &.xe-icon-left {
     > .xe-icon-main {
       flex-shrink: 0;
-      order: 0;
+      order: 1;
       margin-right: 0.1em;
     }
   }
