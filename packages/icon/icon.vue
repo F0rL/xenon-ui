@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import './svg'
 export default {
   name: 'XeIcon',
   props: {
