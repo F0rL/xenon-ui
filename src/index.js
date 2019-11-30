@@ -1,7 +1,8 @@
+import Icon from '../packages/icon'
 import Button from '../packages/button'
 import ButtonGroup from '../packages/button-group'
 
-const components = [Button, ButtonGroup]
+const components = [Icon, Button, ButtonGroup]
 
 const install = Vue => {
   components.forEach(component => {
@@ -11,6 +12,7 @@ const install = Vue => {
 
 export default { 
   install,
+  Icon,
   Button,
   ButtonGroup
 }

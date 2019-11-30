@@ -11,7 +11,8 @@ export default {
   name: 'XeIcon',
   props: {
     name: {
-      type: String
+      type: String,
+      required: true
     }
   }
 }

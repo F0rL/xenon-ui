@@ -16,11 +16,19 @@
       #app,#test {
         margin: 40px;
       }
+      .content > p {
+        color: rgb(54, 163, 158);
+        margin-bottom: 1em;
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div class="content">
+        <p>Icon</p>
+        <xe-icon name="setting"></xe-icon>
+        <p>Button</p>
         <xe-button>默认按钮</xe-button>
         <xe-button icon="loading">默认图标</xe-button>
         <xe-button icon="loading" position="right">右侧图标</xe-button>
@@ -40,6 +48,7 @@
           @click="iconLoading = !iconLoading"
           >点击加载</xe-button
         >
+        <p>Button Group</p>
         <xe-button-group>
           <xe-button icon="left">左按钮</xe-button>
           <xe-button icon="right" position="right">右按钮</xe-button>

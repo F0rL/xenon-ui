@@ -8,6 +8,7 @@
 export default {
   name: 'XeButtonGroup',
   mounted() {
+    //  错误提示
     for (let node of this.$el.children) {
       let name = node.tagName.toLowerCase()
       if (name !== 'button') {
