@@ -26,6 +26,13 @@
   <body>
     <div id="app">
       <div class="content">
+        <p>Input</p>
+        <xe-input type="text" placeholder="普通状态"></xe-input>
+        <xe-input type="text" placeholder="带图标" icon="setting"></xe-input>
+        <xe-input type="text" placeholder="提示错误" icon="setting" error></xe-input>
+        <xe-input type="text" placeholder="disabled" icon="setting" disabled></xe-input>
+        <xe-input type="text" placeholder="resize" icon="setting" resize></xe-input>
+        <xe-input type="textarea" value="textarea"></xe-input>
         <p>Icon</p>
         <xe-icon name="setting"></xe-icon>
         <p>Button</p>
@@ -57,10 +64,10 @@
           <xe-button icon="left">左按钮</xe-button>
           <xe-button>中按钮</xe-button>
           <xe-button icon="right" position="right">右按钮</xe-button>
-          <div>错误提示验证</div>
         </xe-button-group>
       </div>
     </div>
+    <div id="test"></div>
     <script src="./index.js"></script>
   </body>
 </html>
