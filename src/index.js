@@ -2,8 +2,9 @@ import Icon from '../packages/icon'
 import Button from '../packages/button'
 import ButtonGroup from '../packages/button-group'
 import Input from '../packages/input'
+import { Grid, Row, Col } from '../packages/grid'
 
-const components = [Icon, Button, ButtonGroup, Input]
+const components = [Icon, Button, ButtonGroup, Input, Grid]
 
 const install = Vue => {
   components.forEach(component => {
@@ -12,9 +13,7 @@ const install = Vue => {
 }
 
 export default {
-  install,
-  Icon,
-  Button,
-  ButtonGroup,
-  Input
+  install
 }
+
+export { Icon, Button, ButtonGroup, Input, Row, Col }

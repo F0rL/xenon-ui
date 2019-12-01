@@ -1,8 +1,14 @@
 // @手动测试文件，可删除
 import Vue from 'vue'
-import Xenon from './src/index'
 
+// 插件引入
+import Xenon from './src/index'
 Vue.use(Xenon)
+
+// 组件引入
+// import { Row, Col } from './src/index'
+// Vue.component(Row.name, Row)
+// Vue.component(Col.name, Col)
 
 const vue = new Vue({
   el: '#app',
