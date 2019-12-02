@@ -13,7 +13,8 @@
         padding: 0;
         box-sizing: border-box;
       }
-      #app,#test {
+      #app,
+      #test {
         margin: 40px;
       }
       .content > p {
@@ -21,22 +22,61 @@
         margin-bottom: 1em;
         margin-top: 1em;
       }
+      .grid-wrapper {
+        border: 1px solid #000;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div class="content">
         <p>Grid</p>
-        <xe-row>
-          <xe-col></xe-col>
-          <xe-col></xe-col>
-        </xe-row>
+        <div class="grid-wrapper">
+          <xe-row>
+            <xe-col span="14">14</xe-col>
+            <xe-col span="10">10</xe-col>
+          </xe-row>
+          <xe-row>
+            <xe-col span="8">8</xe-col>
+            <xe-col span="8">8</xe-col>
+            <xe-col span="8">8</xe-col>
+          </xe-row>
+          <xe-row>
+            <xe-col span="6">6</xe-col>
+            <xe-col span="6">6</xe-col>
+            <xe-col span="6">6</xe-col>
+            <xe-col span="6">6</xe-col>
+          </xe-row>
+          <xe-row>
+            <xe-col span="4">4</xe-col>
+            <xe-col span="18" offset="2">18</xe-col>
+          </xe-row>
+          <xe-row>
+            <xe-col span="6">6</xe-col>
+            <xe-col span="18">18</xe-col>
+          </xe-row>
+        </div>
         <p>Input</p>
         <xe-input type="text" placeholder="普通状态"></xe-input>
         <xe-input type="text" placeholder="带图标" icon="setting"></xe-input>
-        <xe-input type="text" placeholder="提示错误" icon="setting" error></xe-input>
-        <xe-input type="text" placeholder="disabled" icon="setting" disabled></xe-input>
-        <xe-input type="text" placeholder="resize" icon="setting" resize></xe-input>
+        <xe-input
+          type="text"
+          placeholder="提示错误"
+          icon="setting"
+          error
+        ></xe-input>
+        <xe-input
+          type="text"
+          placeholder="disabled"
+          icon="setting"
+          disabled
+        ></xe-input>
+        <xe-input
+          type="text"
+          placeholder="resize"
+          icon="setting"
+          resize
+        ></xe-input>
         <xe-input type="textarea" value="textarea"></xe-input>
         <p>Icon</p>
         <xe-icon name="setting"></xe-icon>
