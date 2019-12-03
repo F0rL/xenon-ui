@@ -1,5 +1,5 @@
 <template>
-  <span class="xe-icon-wrapper">
+  <span class="xe-icon-wrapper" @click="$emit('click')">
     <svg class="xe-icon" aria-hidden="true">
       <use v-bind:xlink:href="`#xe-${name}`" />
     </svg>

@@ -28,11 +28,52 @@
       .test-grid {
         background: #ccc;
       }
+
+      .container {
+        height: 30vh;
+        padding: 10px;
+      }
+
+      .header {
+        border: 1px solid #000;
+      }
+      .content {
+        border: 1px solid #000;
+      }
+      .footer {
+        border: 1px solid #000;
+      }
+      .sider {
+        width: 200px;
+        background-color: #ccc;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div class="content">
+        <p>Container</p>
+        <xe-container class="container">
+          <xe-header class="header">header</xe-header>
+          <xe-content class="content">content</xe-content>
+          <xe-footer class="footer">footer</xe-footer>
+        </xe-container>
+        <xe-container class="container">
+          <xe-header class="header">header</xe-header>
+          <xe-container>
+            <xe-sider class="sider">sider</xe-sider>
+            <xe-content class="content">content</xe-content>
+          </xe-container>
+          <xe-footer class="footer">footer</xe-footer>
+        </xe-container>
+        <xe-container class="container">
+          <xe-sider class="sider" closebutton>sider</xe-sider>
+          <xe-container>
+            <xe-header class="header">header</xe-header>
+            <xe-content class="content">content</xe-content>
+            <xe-footer class="footer">footer</xe-footer>
+          </xe-container>
+        </xe-container>
         <p>Grid</p>
         <div class="grid-wrapper">
           <xe-row>
@@ -65,12 +106,48 @@
             <xe-col span="6" :ipad="{span: 6}">6</xe-col>
           </xe-row>
           <xe-row>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
-            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
+            <xe-col
+              span="24"
+              :ipad="{span: 12}"
+              :narrow-pc="{span: 8}"
+              class="test-grid"
+              >1</xe-col
+            >
           </xe-row>
         </div>
         <p>Input</p>
