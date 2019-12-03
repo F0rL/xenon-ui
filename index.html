@@ -25,6 +25,9 @@
       .grid-wrapper {
         border: 1px solid #000;
       }
+      .test-grid {
+        background: #ccc;
+      }
     </style>
   </head>
   <body>
@@ -56,10 +59,18 @@
             <xe-col span="18">18</xe-col>
           </xe-row>
           <xe-row gutter="40">
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
+            <xe-col span="6" :ipad="{span: 12}">6</xe-col>
+            <xe-col span="6" :ipad="{span: 2}">6</xe-col>
+            <xe-col span="6" :ipad="{span: 4}">6</xe-col>
+            <xe-col span="6" :ipad="{span: 6}">6</xe-col>
+          </xe-row>
+          <xe-row>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
+            <xe-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}" class="test-grid">1</xe-col>
           </xe-row>
         </div>
         <p>Input</p>
