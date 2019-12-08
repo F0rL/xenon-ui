@@ -15,6 +15,9 @@ const vue = new Vue({
   data: {
     iconLoading: false
   },
+  mounted(){
+    this.$toast()
+  },
   methods: {}
 })
 
