@@ -15,10 +15,19 @@ const vue = new Vue({
   data: {
     iconLoading: false
   },
-  mounted(){
-    this.$toast()
-  },
-  methods: {}
+  mounted() {},
+  methods: {
+    showToast() {
+      this.$toast('显示信息', {
+        closeButton: {
+          text: '点击关闭',
+          callback() {
+            console.log('用户点击关闭')
+          }
+        }
+      })
+    }
+  }
 })
 
 // 单元测试

@@ -15,9 +15,13 @@
       }
       #app,
       #test {
-        margin: 40px;
+        margin: 20px;
       }
-      .content > p {
+      .main {
+        padding: 0 20px 0 20px;
+        border: 1px solid #000;;
+      }
+      .main > section > p {
         color: rgb(54, 163, 158);
         margin-bottom: 1em;
         margin-top: 1em;
@@ -50,163 +54,175 @@
     </style>
   </head>
   <body>
+    <div id="test"></div>
     <div id="app">
-      <div class="content">
-        <p>Container</p>
-        <xe-container class="container">
-          <xe-header class="header">header</xe-header>
-          <xe-content class="content">content</xe-content>
-          <xe-footer class="footer">footer</xe-footer>
-        </xe-container>
-        <xe-container class="container">
-          <xe-header class="header">header</xe-header>
-          <xe-container>
-            <xe-sider class="sider">sider</xe-sider>
-            <xe-content class="content">content</xe-content>
-          </xe-container>
-          <xe-footer class="footer">footer</xe-footer>
-        </xe-container>
-        <xe-container class="container">
-          <xe-sider class="sider" closebutton>sider</xe-sider>
-          <xe-container>
+      <div class="main">
+        <section>
+          <p>Toast</p>
+          <xe-button @click="showToast" type="success">显示toast</xe-button>
+        </section>
+        <section>
+          <p>Container</p>
+          <xe-container class="container">
             <xe-header class="header">header</xe-header>
             <xe-content class="content">content</xe-content>
             <xe-footer class="footer">footer</xe-footer>
           </xe-container>
-        </xe-container>
-        <p>Grid</p>
-        <div class="grid-wrapper">
-          <xe-row>
-            <xe-col span="14">14</xe-col>
-            <xe-col span="10">10</xe-col>
-          </xe-row>
-          <xe-row>
-            <xe-col span="8">8</xe-col>
-            <xe-col span="8">8</xe-col>
-            <xe-col span="8">8</xe-col>
-          </xe-row>
-          <xe-row>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="6">6</xe-col>
-          </xe-row>
-          <xe-row>
-            <xe-col span="4">4</xe-col>
-            <xe-col span="18" offset="2">18</xe-col>
-          </xe-row>
-          <xe-row>
-            <xe-col span="6">6</xe-col>
-            <xe-col span="18">18</xe-col>
-          </xe-row>
-          <xe-row gutter="40">
-            <xe-col span="6" :ipad="{span: 12}">6</xe-col>
-            <xe-col span="6" :ipad="{span: 2}">6</xe-col>
-            <xe-col span="6" :ipad="{span: 4}">6</xe-col>
-            <xe-col span="6" :ipad="{span: 6}">6</xe-col>
-          </xe-row>
-          <xe-row>
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-            <xe-col
-              span="24"
-              :ipad="{span: 12}"
-              :narrow-pc="{span: 8}"
-              class="test-grid"
-              >1</xe-col
-            >
-          </xe-row>
-        </div>
-        <p>Input</p>
-        <xe-input type="text" placeholder="普通状态"></xe-input>
-        <xe-input type="text" placeholder="带图标" icon="setting"></xe-input>
-        <xe-input
-          type="text"
-          placeholder="提示错误"
-          icon="setting"
-          error
-        ></xe-input>
-        <xe-input
-          type="text"
-          placeholder="disabled"
-          icon="setting"
-          disabled
-        ></xe-input>
-        <xe-input
-          type="text"
-          placeholder="resize"
-          icon="setting"
-          resize
-        ></xe-input>
-        <xe-input type="textarea" value="textarea"></xe-input>
-        <p>Icon</p>
-        <xe-icon name="setting"></xe-icon>
-        <p>Button</p>
-        <xe-button>默认按钮</xe-button>
-        <xe-button icon="loading">默认图标</xe-button>
-        <xe-button icon="loading" position="right">右侧图标</xe-button>
-        <xe-button type="normal">普通按钮</xe-button>
-        <xe-button type="primary">主要按钮</xe-button>
-        <xe-button type="success">成功按钮</xe-button>
-        <xe-button type="warning">警告按钮</xe-button>
-        <xe-button type="error">错误按钮</xe-button>
-        <xe-button type="danger">危险按钮</xe-button>
-        <xe-button icon="setting" loading>加载</xe-button>
-        <xe-button icon="setting" position="right" :loading="true"
-          >加载</xe-button
-        >
-        <xe-button
-          icon="setting"
-          :loading="iconLoading"
-          @click="iconLoading = !iconLoading"
-          >点击加载</xe-button
-        >
-        <p>Button Group</p>
-        <xe-button-group>
-          <xe-button icon="left">左按钮</xe-button>
-          <xe-button icon="right" position="right">右按钮</xe-button>
-        </xe-button-group>
-        <xe-button-group>
-          <xe-button icon="left">左按钮</xe-button>
-          <xe-button>中按钮</xe-button>
-          <xe-button icon="right" position="right">右按钮</xe-button>
-        </xe-button-group>
+          <xe-container class="container">
+            <xe-header class="header">header</xe-header>
+            <xe-container>
+              <xe-sider class="sider">sider</xe-sider>
+              <xe-content class="content">content</xe-content>
+            </xe-container>
+            <xe-footer class="footer">footer</xe-footer>
+          </xe-container>
+          <xe-container class="container">
+            <xe-sider class="sider" closebutton>sider</xe-sider>
+            <xe-container>
+              <xe-header class="header">header</xe-header>
+              <xe-content class="content">content</xe-content>
+              <xe-footer class="footer">footer</xe-footer>
+            </xe-container>
+          </xe-container>
+        </section>
+        <section>
+          <p>Grid</p>
+          <div class="grid-wrapper">
+            <xe-row>
+              <xe-col span="14">14</xe-col>
+              <xe-col span="10">10</xe-col>
+            </xe-row>
+            <xe-row>
+              <xe-col span="8">8</xe-col>
+              <xe-col span="8">8</xe-col>
+              <xe-col span="8">8</xe-col>
+            </xe-row>
+            <xe-row>
+              <xe-col span="6">6</xe-col>
+              <xe-col span="6">6</xe-col>
+              <xe-col span="6">6</xe-col>
+              <xe-col span="6">6</xe-col>
+            </xe-row>
+            <xe-row>
+              <xe-col span="4">4</xe-col>
+              <xe-col span="18" offset="2">18</xe-col>
+            </xe-row>
+            <xe-row>
+              <xe-col span="6">6</xe-col>
+              <xe-col span="18">18</xe-col>
+            </xe-row>
+            <xe-row gutter="40">
+              <xe-col span="6" :ipad="{span: 12}">6</xe-col>
+              <xe-col span="6" :ipad="{span: 2}">6</xe-col>
+              <xe-col span="6" :ipad="{span: 4}">6</xe-col>
+              <xe-col span="6" :ipad="{span: 6}">6</xe-col>
+            </xe-row>
+            <xe-row>
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+              <xe-col
+                span="24"
+                :ipad="{span: 12}"
+                :narrow-pc="{span: 8}"
+                class="test-grid"
+                >1</xe-col
+              >
+            </xe-row>
+          </div>
+        </section>
+        <section>
+          <p>Input</p>
+          <xe-input type="text" placeholder="普通状态"></xe-input>
+          <xe-input type="text" placeholder="带图标" icon="setting"></xe-input>
+          <xe-input
+            type="text"
+            placeholder="提示错误"
+            icon="setting"
+            error
+          ></xe-input>
+          <xe-input
+            type="text"
+            placeholder="disabled"
+            icon="setting"
+            disabled
+          ></xe-input>
+          <xe-input
+            type="text"
+            placeholder="resize"
+            icon="setting"
+            resize
+          ></xe-input>
+          <xe-input type="textarea" value="textarea"></xe-input>
+        </section>
+        <section>
+          <p>Icon</p>
+          <xe-icon name="setting"></xe-icon>
+          <p>Button</p>
+          <xe-button>默认按钮</xe-button>
+          <xe-button icon="loading">默认图标</xe-button>
+          <xe-button icon="loading" position="right">右侧图标</xe-button>
+          <xe-button type="normal">普通按钮</xe-button>
+          <xe-button type="primary">主要按钮</xe-button>
+          <xe-button type="success">成功按钮</xe-button>
+          <xe-button type="warning">警告按钮</xe-button>
+          <xe-button type="error">错误按钮</xe-button>
+          <xe-button type="danger">危险按钮</xe-button>
+          <xe-button icon="setting" loading>加载</xe-button>
+          <xe-button icon="setting" position="right" :loading="true"
+            >加载</xe-button
+          >
+          <xe-button
+            icon="setting"
+            :loading="iconLoading"
+            @click="iconLoading = !iconLoading"
+            >点击加载</xe-button
+          >
+          <p>Button Group</p>
+          <xe-button-group>
+            <xe-button icon="left">左按钮</xe-button>
+            <xe-button icon="right" position="right">右按钮</xe-button>
+          </xe-button-group>
+          <xe-button-group>
+            <xe-button icon="left">左按钮</xe-button>
+            <xe-button>中按钮</xe-button>
+            <xe-button icon="right" position="right">右按钮</xe-button>
+          </xe-button-group>
+        </section>
       </div>
     </div>
-    <div id="test"></div>
     <script src="./index.js"></script>
   </body>
 </html>
