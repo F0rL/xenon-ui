@@ -18,7 +18,10 @@ const vue = new Vue({
   mounted() {},
   methods: {
     showToast() {
-      this.$toast('显示信息', {
+      this.$toast(`恭喜完成消息`, {
+        enableHtml: false,
+        position: 'top',
+        type: 'error',
         closeButton: {
           text: '点击关闭',
           callback() {
