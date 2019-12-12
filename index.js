@@ -13,7 +13,8 @@ Vue.use(Xenon)
 const vue = new Vue({
   el: '#app',
   data: {
-    iconLoading: false
+    iconLoading: false,
+    selectedTab: 'woman'
   },
   mounted() {},
   methods: {

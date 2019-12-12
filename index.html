@@ -19,7 +19,7 @@
       }
       .main {
         padding: 0 20px 0 20px;
-        border: 1px solid #000;;
+        border: 1px solid #000;
       }
       .main > section > p {
         color: rgb(54, 163, 158);
@@ -57,6 +57,24 @@
     <div id="test"></div>
     <div id="app">
       <div class="main">
+        <section>
+          <p>Tabs</p>
+          <xe-tabs :selected.sync="selectedTab" >
+            <xe-tabs-head>
+              <xe-tabs-item name="woman">美女资讯</xe-tabs-item>
+              <xe-tabs-item name="finance" disabled>财经</xe-tabs-item>
+              <xe-tabs-item name="sports">体育新闻</xe-tabs-item>
+              <template v-slot:action>
+                <button>设置</button>
+              </template>
+            </xe-tabs-head>
+            <xe-tabs-body>
+              <xe-tabs-pane name="woman">美女相关资讯</xe-tabs-pane>
+              <xe-tabs-pane name="finance">财经相关资讯</xe-tabs-pane>
+              <xe-tabs-pane name="sports">体育相关资讯</xe-tabs-pane>
+            </xe-tabs-body>
+          </xe-tabs>
+        </section>
         <section>
           <p>Toast</p>
           <xe-button @click="showToast" type="success">显示toast</xe-button>
