@@ -1,5 +1,5 @@
 <template>
-  <div class="xe-tabs-item" :class="tabsClass" @click="onClick">
+  <div class="xe-tabs-item" :class="tabsClass" @click="onClick" :data-name="name">
     <slot></slot>
   </div>
 </template>
@@ -24,9 +24,11 @@ export default {
     }
   },
   mounted() {
-    this.eventBus.$on('update:selected', name => {
-      this.active = name === this.name
-    })
+    if (this.eventBus) {
+      this.eventBus.$on('update:selected', name => {
+        this.active = name === this.name
+      })
+    }
   },
   computed: {
     tabsClass() {
@@ -42,6 +44,7 @@ export default {
         return
       }
       this.eventBus.$emit('update:selected', this.name, this)
+      this.$emit('click', this)
     }
   }
 }
