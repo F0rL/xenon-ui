@@ -58,6 +58,10 @@
     <div id="app">
       <div class="main">
         <section>
+          <p>Popover</p>
+          <xe-popover></xe-popover>
+        </section>
+        <section>
           <p>Tabs</p>
           <xe-tabs :selected.sync="selectedTab" >
             <xe-tabs-head>
@@ -78,6 +82,7 @@
         <section>
           <p>Toast</p>
           <xe-button @click="showToast" type="success">显示toast</xe-button>
+          <xe-button @click="showToast" type="warning">显示toast</xe-button>
         </section>
         <section>
           <p>Container</p>

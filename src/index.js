@@ -6,8 +6,9 @@ import { Grid, Row, Col } from '../packages/grid'
 import Container from '../packages/container'
 import Toast from '../packages/toast'
 import Tabs from '../packages/tabs'
+import Popover from '../packages/popover'
 
-const components = [Icon, Button, ButtonGroup, Input, Grid, Container, Toast, Tabs]
+const components = [Icon, Button, ButtonGroup, Input, Grid, Container, Toast, Tabs, Popover]
 
 const install = Vue => {
   components.forEach(component => {
@@ -19,4 +20,4 @@ export default {
   install
 }
 
-export { Icon, Button, ButtonGroup, Input, Row, Col, Toast }
+export { Icon, Button, ButtonGroup, Input, Row, Col, Toast, Popover }
