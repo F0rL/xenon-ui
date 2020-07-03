@@ -59,7 +59,18 @@
       <div class="main">
         <section>
           <p>Popover</p>
-          <xe-popover></xe-popover>
+          <xe-popover>
+            <template slot="content">
+              <div>popover内容</div>
+            </template>
+            <button>点击</button>
+          </xe-popover>
+          <xe-popover>
+            <template slot="content">
+              <div>popover内容</div>
+            </template>
+            <button>点击</button>
+          </xe-popover>
         </section>
         <section>
           <p>Tabs</p>
