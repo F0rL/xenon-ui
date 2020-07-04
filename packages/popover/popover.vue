@@ -1,12 +1,13 @@
 <template>
-  <div ref="xePopover" class="xe-popover" @click="onClick">
+  <div ref="xePopover" class="xe-popover">
     <div
       ref="xeContentWrapper"
       class="xe-content-wrapper"
       v-if="visible"
       :class="{[`position-${position}`]: true}"
     >
-      <slot name="content"></slot>
+    <!-- 暴露close方法给外面调用 -->
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="xeTriggerContent" style="display: inline-block;">
       <slot></slot>
@@ -38,7 +39,39 @@ export default {
       visible: false
     }
   },
-  mounted() {},
+  mounted() {
+    // 判断事件
+    if (this.trigger === 'click') {
+      this.$refs.xePopover.addEventListener('click', this.onClick)
+    } else {
+      this.$refs.xePopover.addEventListener('mouseenter', this.open)
+      this.$refs.xePopover.addEventListener('mouseleave', this.close)
+    }
+  },
+  destroyed() {
+    if (this.trigger === 'click') {
+      this.$refs.xePopover.removeEventListener('click', this.onClick)
+    } else {
+      this.$refs.xePopover.removeEventListener('mouseenter', this.open)
+      this.$refs.xePopover.removeEventListener('mouseleave', this.close)
+    }
+  },
+  computed: {
+    openEvent() {
+      if (this.trigger === 'click') {
+        return 'click'
+      } else {
+        return 'mouseenter'
+      }
+    },
+    closeEvent() {
+      if (this.trigger === 'click') {
+        return 'click'
+      } else {
+        return 'mouseleave'
+      }
+    }
+  },
   methods: {
     positionContent() {
       const { xeContentWrapper, xeTriggerContent } = this.$refs
@@ -119,11 +152,12 @@ export default {
   position: relative;
 }
 .xe-content-wrapper {
+  font-size: $popoverFontsize;
   position: absolute;
-  border: 1px solid $popoverColor;
+  border: 1px solid $border;
   border-radius: $borderRadius;
   background: #fff;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 1px 1px $border);
   padding: 0.5em 1em;
   max-width: 20em;
   // 中文文字换行
@@ -146,7 +180,7 @@ export default {
     }
     &::before {
       border-bottom: none;
-      border-top-color: #000;
+      border-top-color: $border;
       top: 100%;
     }
     &::after {
@@ -163,7 +197,7 @@ export default {
     }
     &::before {
       border-top: none;
-      border-bottom-color: #000;
+      border-bottom-color: $border;
       bottom: 100%;
     }
     &::after {
@@ -182,7 +216,7 @@ export default {
     }
     &::before {
       border-right: none;
-      border-left-color: #000;
+      border-left-color: $border;
       left: 100%;
     }
     &::after {
@@ -200,7 +234,7 @@ export default {
     }
     &::before {
       border-left: none;
-      border-right-color: #000;
+      border-right-color: $border;
       right: 100%;
     }
     &::after {
