@@ -1,6 +1,9 @@
 <template>
   <div ref="xePopover" class="xe-popover" @click="onClick">
-    <div ref="xeContentWrapper" class="xe-content-wrapper" v-if="visible"
+    <div
+      ref="xeContentWrapper"
+      class="xe-content-wrapper"
+      v-if="visible"
       :class="{[`position-${position}`]: true}"
     >
       <slot name="content"></slot>
@@ -38,15 +41,32 @@ export default {
   mounted() {},
   methods: {
     positionContent() {
-      document.body.appendChild(this.$refs.xeContentWrapper)
+      const { xeContentWrapper, xeTriggerContent } = this.$refs
+      document.body.appendChild(xeContentWrapper)
       const {
         width,
         height,
         top,
         left
-      } = this.$refs.xeTriggerContent.getBoundingClientRect()
-      this.$refs.xeContentWrapper.style.left = left + window.scrollX + 'px'
-      this.$refs.xeContentWrapper.style.top = top + window.scrollY + 'px'
+      } = xeTriggerContent.getBoundingClientRect()
+      const { height: height2 } = xeContentWrapper.getBoundingClientRect()
+      let positions = {
+        top: { top: top + window.scrollY, left: left + window.scrollX },
+        bottom: {
+          top: top + height + window.scrollY,
+          left: left + window.scrollX
+        },
+        left: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.scrollX
+        },
+        right: {
+          top: top + window.scrollY + (height - height2) / 2,
+          left: left + window.scrollX + width
+        }
+      }
+      xeContentWrapper.style.left = positions[this.position].left + 'px'
+      xeContentWrapper.style.top = positions[this.position].top + 'px'
     },
     onClickDocument(e) {
       // 如果点击的是popover，那么交给事件关闭，解决多次关闭的问题
@@ -104,8 +124,6 @@ export default {
   border-radius: $borderRadius;
   background: #fff;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
-  transform: translateY(-100%);
-  margin-top: -10px;
   padding: 0.5em 1em;
   max-width: 20em;
   // 中文文字换行

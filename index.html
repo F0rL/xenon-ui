@@ -59,17 +59,29 @@
       <div class="main">
         <section>
           <p>Popover</p>
+          <xe-popover style="margin: 20px;">
+            <template slot="content">
+              <div>popover内容dfasdflkasdhfkhaskjdhfaksjd</div>
+            </template>
+            <xe-button>上方</xe-button>
+          </xe-popover>
+          <xe-popover style="margin: 20px;" position="right">
+            <template slot="content">
+              <div>popover内容</div>
+            </template>
+            <xe-button>右方</xe-button>
+          </xe-popover>
           <xe-popover style="margin: 20px;" position="bottom">
             <template slot="content">
               <div>popover内容</div>
             </template>
-            <xe-button>点击</xe-button>
+            <xe-button>下方</xe-button>
           </xe-popover>
-          <xe-popover style="margin: 20px;">
+          <xe-popover style="margin: 20px;" position="left">
             <template slot="content">
               <div>popover内容</div>
             </template>
-            <xe-button>点击</xe-button>
+            <xe-button>左方</xe-button>
           </xe-popover>
         </section>
         <section>
