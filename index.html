@@ -58,10 +58,19 @@
     <div id="app">
       <div class="main">
         <section>
+          <p>collapse</p>
+          <xe-collapse :selected="['2']">
+            <xe-collapse-item title="汽车" name="1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+            <xe-collapse-item title="美女" name="2">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+            <xe-collapse-item title="购物" name="3">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+          </xe-collapse>
+        </section>
+        <section>
           <p>Popover</p>
           <xe-popover style="margin: 20px;">
             <template slot="content" slot-scope="{close}">
-              <div>popover内容dfasdflkasdhfkhaskjdhfaksjd
+              <div>
+                popover内容dfasdflkasdhfkhaskjdhfaksjd
                 <xe-button @click="close">关闭</xe-button>
               </div>
             </template>
@@ -100,7 +109,7 @@
         </section>
         <section>
           <p>Tabs</p>
-          <xe-tabs :selected.sync="selectedTab" >
+          <xe-tabs :selected.sync="selectedTab">
             <xe-tabs-head>
               <xe-tabs-item name="woman">美女资讯</xe-tabs-item>
               <xe-tabs-item name="finance" disabled>财经</xe-tabs-item>
