@@ -59,11 +59,19 @@
       <div class="main">
         <section>
           <p>collapse</p>
-          <xe-collapse :selected="['2']">
+          <xe-collapse :selected.sync="collapseTab1">
             <xe-collapse-item title="汽车" name="1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
             <xe-collapse-item title="美女" name="2">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
             <xe-collapse-item title="购物" name="3">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
           </xe-collapse>
+          <p>当前选择的: {{collapseTab1}}</p>
+          <p>single</p>
+          <xe-collapse :selected.sync="collapseTab2" single>
+            <xe-collapse-item title="汽车" name="1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+            <xe-collapse-item title="美女" name="2">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+            <xe-collapse-item title="购物" name="3">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</xe-collapse-item>
+          </xe-collapse>
+          <p>当前选择的: {{collapseTab2}}</p>
         </section>
         <section>
           <p>Popover</p>

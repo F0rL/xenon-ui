@@ -14,7 +14,9 @@ const vue = new Vue({
   el: '#app',
   data: {
     iconLoading: false,
-    selectedTab: 'woman'
+    selectedTab: 'woman',
+    collapseTab1: ['2'],
+    collapseTab2: ['2'],
   },
   mounted() {},
   methods: {

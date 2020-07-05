@@ -28,9 +28,9 @@ export default {
   },
   mounted() {
     this.eventBus &&
-      this.eventBus.$on('update:selected', selected => {
-        console.log(selected, selected.includes(this.name))
-        if (selected.includes(this.name)) {
+      this.eventBus.$on('update:selected', names => {
+        // console.log(selected, selected.includes(this.name))
+        if (names.includes(this.name)) {
           this.open = true
         } else {
           this.open = false
@@ -40,10 +40,9 @@ export default {
   methods: {
     toggle() {
       if (this.open) {
-        this.open = false
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name)
       } else {
-        this.open = true
-        this.eventBus.$emit('update:selected', this.name)
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name)
       }
     }
   }
@@ -63,6 +62,7 @@ export default {
     align-items: center;
     padding: 0 8px;
     background: lighten($collapseBorderColor, 8%);
+    cursor: pointer;
   }
   &:first-child {
     > .xe-collapse-title {
