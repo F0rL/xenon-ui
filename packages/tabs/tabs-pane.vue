@@ -35,8 +35,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.xe-tabs-pane {
-  &.xe-tabs-active {
-  }
-}
 </style>
